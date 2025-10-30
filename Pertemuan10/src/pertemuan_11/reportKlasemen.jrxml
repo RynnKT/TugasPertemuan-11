@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="57db4d83-bbea-4131-a700-78aabbb7e719">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM ligasawah]]>
+	</queryString>
+	<field name="nomor" class="java.lang.Integer"/>
+	<field name="klub" class="java.lang.String"/>
+	<field name="kotaasal" class="java.lang.String"/>
+	<field name="pointkemenangan" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="170" y="0" width="263" height="62" uuid="7d2c6305-4296-4a32-ab14-60fab352828c"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Liga Sawah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="94" width="383" height="42" uuid="4897f43e-a2a3-41d4-b916-254253e51f8e"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Kejuaraan bola bergengsi untuk semua planet]]></text>
+			</staticText>
+			<image>
+				<reportElement x="1" y="0" width="253" height="136" uuid="ce02da86-fea6-4269-8787-e81178e1c1cc"/>
+				<imageExpression><![CDATA["C:\\Users\\Ridho\\Downloads\\download.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="445" y="-19" width="170" height="113" uuid="0f931559-51bf-479a-8cb5-e2875b58ffc2"/>
+				<imageExpression><![CDATA["C:\\Users\\Ridho\\Downloads\\download (1).jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="89c1c3a1-f244-43f1-b603-0191548e6082"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="138" height="15" forecolor="#66FF66" uuid="b3ec423a-1872-4b36-a12a-3c11ca4a006a"/>
+				<text><![CDATA[nomor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="138" y="0" width="138" height="15" forecolor="#66FF66" uuid="c5177327-8401-488a-a7ba-0fef00ee8b51"/>
+				<text><![CDATA[klub]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="276" y="0" width="138" height="15" forecolor="#66FF66" uuid="7b7052fd-2d48-4388-8310-a5cb5fa4e54d"/>
+				<text><![CDATA[kotaasal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="414" y="0" width="138" height="15" forecolor="#66FF66" uuid="86ae0046-3598-44ef-b082-16c79e094962"/>
+				<text><![CDATA[pointkemenangan]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="15" uuid="bbaca19b-9f12-411e-bdda-c7402d0356f0"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="138" height="15" uuid="e1f6c7e9-9b88-4e56-ab4e-3c307d5d2a9b"/>
+					<textFieldExpression><![CDATA[$F{nomor}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="138" y="0" width="138" height="15" uuid="1cb85d61-42a3-4fd9-81c5-b5276c8014ad"/>
+					<textFieldExpression><![CDATA[$F{klub}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="276" y="0" width="138" height="15" uuid="b61f4e7c-5b13-48c4-a102-ce84cd88b98f"/>
+					<textFieldExpression><![CDATA[$F{kotaasal}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="414" y="0" width="138" height="15" uuid="231e8e56-8134-4a35-bc5d-b3191cde30ec"/>
+					<textFieldExpression><![CDATA[$F{pointkemenangan}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="71b53e69-244d-445f-8d92-fc1bce20567e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#66FF66" backcolor="#66FF66" uuid="e7abacfd-2724-4f58-a839-1bd01c56acd0"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#736343" uuid="5c568e63-da28-45ab-8276-70e7df35aeff"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="453" y="0" width="80" height="20" forecolor="#736343" uuid="14760679-7e9c-4cae-8079-c96ecc5cbaaa"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="16735642-81fe-4660-9c20-d5e70b42d143"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
